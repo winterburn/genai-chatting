@@ -27,7 +27,7 @@ COPY src/ ./src/
 COPY --from=frontend-builder /app/frontend/build/ ./genai-frontend/build/
 
 # Install Python dependencies
-RUN pip install --no-cache-dir "uvicorn>=0.24.0"
+RUN pip install "uvicorn>=0.24.0"
 RUN pip install --no-cache-dir .
 
 # Set environment variables

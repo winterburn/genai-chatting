@@ -12,9 +12,6 @@ services:
       - ./genai-frontend:/app/genai-frontend
     network_mode: "host"
 
-volumes:
-  qdrant_data:
-
 networks:
   genai-network:
     driver: bridge 
