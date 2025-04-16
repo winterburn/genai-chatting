@@ -27,7 +27,7 @@ function ChatBox() {
       setInput("");
 
       try {
-        const response = await axios.post<string>("http://127.0.0.1:8000/answer", { prompt: input });
+        const response = await axios.post<string>("http://127.0.0.1:8080/answer", { prompt: input });
         const botMessage: ChatMessage = { sender: "bot", text: response.data };
         setMessages((prev) => [...prev, botMessage]);
       } catch (error) {

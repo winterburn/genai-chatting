@@ -47,7 +47,7 @@ OPENAI_API_KEY=your_api_key_here
 fastapi dev main.py
 ```
 
-2. The application will be available at `http://localhost:8000`
+2. The application will be available at `http://localhost:8080`
 
 ## API Endpoints
 

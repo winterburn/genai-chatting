@@ -1,0 +1,20 @@
+services:
+  backend:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - QDRANT_URL=${QDRANT_URL}
+    volumes:
+      - ./src:/app/src
+      - ./tests:/app/tests
+      - ./genai-frontend:/app/genai-frontend
+    network_mode: "host"
+
+volumes:
+  qdrant_data:
+
+networks:
+  genai-network:
+    driver: bridge 

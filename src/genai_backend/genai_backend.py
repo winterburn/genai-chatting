@@ -19,7 +19,7 @@ except Exception as e:
     raise
 
 try:
-    qdrant = QdrantClient(url="http://localhost:6333")
+    qdrant = QdrantClient(url=os.environ.get("QDRANT_URL"))
 except Exception as e:
     print(f"Error connecting to Qdrant: {str(e)}")
     raise
