@@ -88,5 +88,7 @@ def get_answer(message: Message):
 
 
 app.mount(
-    "/", StaticFiles(directory="genai-frontend/build", html=True), name="genai testing"
+    "/",
+    StaticFiles(directory="frontend", html=True),
+    name="genai testing",
 )

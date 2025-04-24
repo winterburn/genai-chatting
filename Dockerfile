@@ -1,5 +1,5 @@
 # Build frontend
-FROM node:18-alpine AS frontend-builder
+FROM node:20-alpine AS frontend-builder
 
 WORKDIR /app/frontend
 COPY genai-frontend/package*.json ./
@@ -24,7 +24,7 @@ COPY pyproject.toml ./
 COPY src/ ./src/
 
 # Create directory for frontend and copy built files
-COPY --from=frontend-builder /app/frontend/build/ ./genai-frontend/build/
+COPY --from=frontend-builder /app/frontend/build/ ./frontend/
 
 # Install Python dependencies
 RUN pip install "uvicorn>=0.24.0"
