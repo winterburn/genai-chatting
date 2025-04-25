@@ -11,9 +11,7 @@ load_dotenv()
 
 # Initialize clients with error handling
 try:
-    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
-    if not os.environ.get("OPENAI_API_KEY"):
-        raise ValueError("OPENAI_API_KEY environment variable is not set")
+    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY", ""))
 except Exception as e:
     print(f"Error initializing OpenAI client: {str(e)}")
     raise
@@ -89,6 +87,9 @@ def get_answer(message: Message):
 
 app.mount(
     "/",
-    StaticFiles(directory="frontend", html=True),
+    StaticFiles(
+        directory="frontend" if os.path.exists("frontend") else "genai-frontend/public",
+        html=True,
+    ),
     name="genai testing",
 )

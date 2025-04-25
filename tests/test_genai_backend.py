@@ -2,7 +2,6 @@ import pytest
 from fastapi.testclient import TestClient
 from unittest.mock import patch, MagicMock
 from genai_backend.genai_backend import app, get_context
-import os
 
 # Test client
 client = TestClient(app)
