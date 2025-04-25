@@ -108,7 +108,7 @@ function Chatbox() {
           aria-label="Send message"
           data-testid="send-button"
         >
-          {loading ? <CircularProgress size={24} /> : <SendIcon />}
+          {loading ? <CircularProgress size={24} role="progressbar" /> : <SendIcon />}
         </IconButton>
       </Box>
     </Paper>

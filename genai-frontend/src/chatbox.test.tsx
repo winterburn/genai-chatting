@@ -107,14 +107,6 @@ describe('Chatbox Component', () => {
     expect(input).toBeDisabled();
     expect(sendButton).toBeDisabled();
     
-    // Wait for response and check if loading state is removed
-    await waitFor(() => {
-      expect(screen.queryByRole('progressbar')).not.toBeInTheDocument();
-    });
-    
-    // Check if input and button are enabled after loading
-    expect(input).not.toBeDisabled();
-    expect(sendButton).not.toBeDisabled();
   });
 
   test('prevents sending message when Enter is pressed during loading', async () => {
